@@ -6,9 +6,14 @@ pipeline {
         sh 'echo Hello World'
       }
     }
+    stage('Approval') {
+      steps {
+        input 'Do you want to got to next step'
+      }
+    }
     stage('Print2') {
       steps {
-        echo 'New Stage'
+        echo 'Print2'
       }
     }
   }
